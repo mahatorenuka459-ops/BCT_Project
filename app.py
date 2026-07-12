@@ -470,3 +470,7 @@ st.markdown("""
     Made with ❤️ using Streamlit & Groq API • High-speed Multilingual AI Infrastructure
 </div>
 """, unsafe_allow_html=True)
+
+
+
+
