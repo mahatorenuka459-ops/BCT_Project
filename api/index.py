@@ -6,13 +6,19 @@ import os
 
 # Ensure the project root is in path so `src.*` imports resolve
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel
 from typing import Optional
 
+
+root_dir = str(Path(__file__).resolve().parent.parent)
+if root_dir not in sys.Path:
+    sys.Path.insert(0, root_dir)
+
+    
 from src.language_detector import detect_language
 from src.translator import translate_text
 from src.summarizer import summarize_text
